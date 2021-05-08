@@ -6,13 +6,25 @@ object Dependencies {
     }
 
     object Spigot {
-        val version = "1.16.2-R0.1-SNAPSHOT"
+        val version = "1.16.5-R0.1-SNAPSHOT"
         val api = "org.spigotmc:spigot-api:$version"
         val annotations = "org.spigotmc:plugin-annotations:1.2.3-SNAPSHOT"
         val repository = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
     }
 
+    object ProtocolLib {
+        val version = "4.5.1"
+        val repository = "http://repo.dmulloy2.net/nexus/repository/public/"
+        val core = "com.comphenix.protocol:ProtocolLib:$version"
+    }
+
     object JUnit {
         val core = "org.junit.jupiter:junit-jupiter:5.5.2"
+    }
+
+    object MockBukkit {
+        val version = "0.25.0"
+        val repository = "https://hub.spigotmc.org/nexus/content/repositories/public/"
+        val core = "com.github.seeseemelk:MockBukkit-v1.16:$version"
     }
 }

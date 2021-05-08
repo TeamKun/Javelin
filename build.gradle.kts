@@ -4,21 +4,29 @@ plugins {
     kotlin("kapt").version(Dependencies.Kotlin.version)
 }
 
-group = "com.reyadayer"
+group = "team.kun"
 version = "1.0-SNAPSHOT"
 
 repositories {
     jcenter()
     mavenCentral()
     maven(Dependencies.Spigot.repository)
+    maven(Dependencies.ProtocolLib.repository)
+    maven(Dependencies.MockBukkit.repository)
 }
 
 dependencies {
     compile(Dependencies.Spigot.api)
-    compileOnly(Dependencies.Spigot.annotations)
+    compileOnly(Dependencies.Spigot.annotations) {
+        exclude("org.bukkit", "bukkit")
+    }
     kapt(Dependencies.Spigot.annotations)
     compile(Dependencies.Kotlin.stdlib)
+    compileOnly(Dependencies.ProtocolLib.core) {
+        exclude("com.comphenix.executors", "BukkitExecutors")
+    }
     testCompile(Dependencies.JUnit.core)
+    testCompile(Dependencies.MockBukkit.core)
 }
 
 buildscript {
